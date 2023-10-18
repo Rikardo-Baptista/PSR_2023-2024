@@ -1,22 +1,13 @@
 #!/usr/bin/env python3
 #shebang line to inform the OS that the content is in python
 
-# --------------------------------------------------
-# A simple python script to print hello world!
-# Miguel Riem Oliveira.
-# PSR, September 2023.
-# --------------------------------------------------
-
 import argparse
-
 import readchar
 
 # Use imports here
 from colorama import Fore, Back, Style
 
 # Define functions here ...
-
-# maximum_number = 30
 
 def  countNumbersUpto(stop_char):
 

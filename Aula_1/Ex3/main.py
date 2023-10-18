@@ -6,13 +6,11 @@ from colorama import Fore, Back, Style
 
 # define functions here ...
 
-maximum_number = 10
+maximum_number = 1000
 
-def isPerfect(value):
-    
-
+def isPerfect(value):    
     # Percorrer todos os numeros até ao número em análise
-    # para cada umero, ver se é um divisor inteiro
+    # para cada numero, ver se é um divisor inteiro
     # Se for, somar num acumulador
     accumulator = 0
     for i in range(1, value):

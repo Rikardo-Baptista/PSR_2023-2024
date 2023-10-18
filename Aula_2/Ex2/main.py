@@ -9,7 +9,6 @@ from my_functions import isPerfect
 
 maximum_number = 500
 
-
 def main():
     print("Starting to compute perfect numbers up to " + str(maximum_number))
 

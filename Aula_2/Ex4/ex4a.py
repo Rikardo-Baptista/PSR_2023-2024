@@ -27,7 +27,8 @@ def printAllCharsUpTo():
     for i in range(32,number):
         chars_to_print.append(chr(i))
  
-    print(''.join(chars_to_print))
+    #Junta (join) com o separador "nada" todos os caracteres e imprimir numa linha
+    print(''.join(chars_to_print)) 
 
 def main():
 

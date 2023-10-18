@@ -8,9 +8,6 @@ from my_functions import isPerfect
 
 # Define functions here ...
 
-# maximum_number = 30
-
-
 def main():
 
     # Process command line arguments
@@ -32,9 +29,6 @@ def main():
     for i in range(1, args['maximum_number']+1):
         if isPerfect(i):
             print('Number ' + str(i) + ' is perfect.')
-
-        # dividers = getDividers(i)
-        # print('Number ' + str(i) + ' has dividers ' +str(dividers))
 
 
 if __name__ == "__main__":
