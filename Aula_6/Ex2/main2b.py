@@ -10,7 +10,14 @@ def main():
     _, image = capture.read()  # get an image from the camera
 
     # add code to show acquired image
+    
+
+
+    
     # add code to wait for a key press
+    cv2.waitKey(0) # wait for a key press before proceeding
+
+
 
 if __name__ == '__main__':
     main()
