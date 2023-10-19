@@ -46,7 +46,7 @@ def main():
 
     print(pessoas[1].altura)
 
-    # 1 dicionarios nested
+    # 1 dicionarios nested (dicionario dentro de dicionario)
     pessoas = {'Gustavo': {'nacionalidade': 'Brasil', 'altura': 1.75, 'peso': 50}, 
                'Miguel': {'nacionalidade': 'Portugal', 'altura': 1.95, 'peso': 50} }
 

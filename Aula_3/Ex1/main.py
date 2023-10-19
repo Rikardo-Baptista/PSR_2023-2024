@@ -6,9 +6,6 @@ from colorama import Fore, Back, Style
 import readchar
 
 # Define functions here ...
-
-# maximum_number = 30
-
 def  countNumbersUpto(stop_char):
 
     print('Start typing')
@@ -22,54 +19,18 @@ def  countNumbersUpto(stop_char):
         if key == stop_char:
             break
 
-    print(keys)
+    print('\n' + str(keys) + '\n')
 
     n_numeric = 0
     for key in keys:
         if key.isnumeric():
-            n_numeric +=1
-        
-    print('You pressed on ' + str(n_numeric) + ' numeric keys')
+            n_numeric +=1   
+    print('You pressed on ' + str(n_numeric) + ' numeric keys' + '\n')
 
-    # Ex5b
-    numerical_keys = []
-    for key in keys:
-        if key.isnumeric():
-            numerical_keys.append(key)
-
-
-    print('Numerical keys' + str(numerical_keys))
-
-    # Ex5c 
-    #['a', '1', 'b', '2', 'c', '3', 'd', '4', 'x']
-
-    # {0, 'a', 1: '1', 2: 'b', ...}
-    d_keys = {}
-    for key_idx, key in enumerate(keys):
-        d_keys[key_idx] = key
-
-    print('d_keys = ' + str(d_keys))
-
-    # Ex 5d
-    numerical_keys.sort()
-    print('Numerical keys' + str(numerical_keys))
-
-    #Ex 5e) 
-
-    # List comprehension
-    numerical_keys2 = [x for x in keys if x.isnumeric()]
-    print('Numerical keys2' + str(numerical_keys2))
-
-    d_keys2 = {idx:x for idx,x in enumerate(keys)}
-    print('d_keys2 ' + str(d_keys2))
-
-
+#Exemplo utilização do colorama da Aula_2 no Ex5 
     for idx_key, key in enumerate(keys):
         print(Fore.RED + str(idx_key) + Style.RESET_ALL + ': the key pressed was ' + Fore.GREEN + 
-              Back.MAGENTA + key + Style.RESET_ALL)
-
-
-    
+              Back.MAGENTA + key + Style.RESET_ALL) 
 
 def main():
     countNumbersUpto('x')
