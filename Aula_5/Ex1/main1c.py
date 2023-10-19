@@ -12,13 +12,13 @@ def main():
     args = vars(parser.parse_args()) # creates a dictionary
     print(args)
 
-
-    image_filename = args['image_filename']
+    image_filename = args['image_filename']   
     image = cv2.imread(image_filename, cv2.IMREAD_COLOR) # Load an image
 
     cv2.imshow('window', image)  # Display the image
     cv2.waitKey(0) # wait for a key press before proceeding
 
+    # falta colocar tempo
 
 if __name__ == '__main__':
     main()
