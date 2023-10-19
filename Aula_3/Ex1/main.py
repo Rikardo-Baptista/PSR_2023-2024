@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
 #shebang line to inform the OS that the content is in python
 
-import argparse
-import readchar
-
 # Use imports here
 from colorama import Fore, Back, Style
+import readchar
 
 # Define functions here ...
 
@@ -56,7 +54,7 @@ def  countNumbersUpto(stop_char):
     numerical_keys.sort()
     print('Numerical keys' + str(numerical_keys))
 
-    #Ex e) 
+    #Ex 5e) 
 
     # List comprehension
     numerical_keys2 = [x for x in keys if x.isnumeric()]

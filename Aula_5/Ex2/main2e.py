@@ -4,6 +4,7 @@
 import argparse
 import cv2
 import numpy as np
+from copy import deepcopy
 
 
 def main():
@@ -23,12 +24,28 @@ def main():
     upper_bound = np.array([70, 255, 255])
 
     mask = cv2.inRange(image_hsv, lower_bound, upper_bound)
+    print(mask.dtype)
+    print(mask.shape)
 
     #Aplicar a máscara na imagem original para destacar a cor verde
     image_mask = cv2.bitwise_and(image_hsv, image_hsv, mask=mask)
+    image_rgb2 = deepcopy(image_rgb)
 
-    cv2.imshow('image_rgb', image_rgb)  # Display the image
-    cv2.imshow("image_mask.png", image_mask)
+    #Separar a imagem em RGB
+    image_b, image_g, image_r = cv2.split(image_rgb2) 
+
+    #Tratar a imagem com os canais separados
+    image_b[mask.astype(bool)] = 0
+    image_g[mask.astype(bool)] = 255
+    image_r[mask.astype(bool)] = 0
+    
+    #Juntar a imagem em RGB (nova)
+    image_rgb2 = cv2.merge([image_b, image_g, image_r]) 
+
+
+    #cv2.imshow('image_rgb', image_rgb)  # Display the image
+    #cv2.imshow("image_mask", mask)
+    cv2.imshow("image_rgb2", image_rgb2)
     cv2.waitKey(0) # wait for a key press before proceeding
 
 

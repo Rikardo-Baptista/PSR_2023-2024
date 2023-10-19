@@ -1,4 +1,4 @@
-from math import sqrt
+#from math import sqrt
 
 def getDividers(value):
     """Gets a list of integer dividers of number value
@@ -13,7 +13,7 @@ def getDividers(value):
     # create an empty list
     dividers = []
 
-    # for i in range(1,int(sqrt(value))):
+    #for i in range(1,int(sqrt(value))):
     limit = round((value/2)+1)
     # print('Square root for number ' + str(value) + ' is ' + str(limit))
     for i in range(1,limit):

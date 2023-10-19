@@ -2,40 +2,41 @@
 #shebang line to inform the OS that the content is in python
 
 # Use imports here
-import argparse
 import readchar
-from colorama import Fore, Back, Style
 
-def printAllCharsUpTo():
+# Define functions here ...
 
-    # Passo 1: ler um carater do terminal -> readchar 
-    print('Press a key to read a char ')
-    key = readchar.readkey()
-    print('User pressed ' + key)
+def  countNumbersUpto(stop_char):
 
-    # Passo 2: lido -> char? calcular o númeor correspondente ao lido  chr ou ord
-    number = ord(key)
-    print('Corresponding number is ' + str(number))
+    print('Start typing')
 
-    # passo 3: percorrer todos os numeros deste o espaço (32) até ao nmero lido, 
-    # e para cada iteração imprimir o carater correspondente
+    keys =[]
+    while True:
+        key = readchar.readkey()
+        keys.append(key)
+        print('You typed ' + key)
 
-    # for i in range(32,number):
-    # print(chr(i), end='')
- 
-    chars_to_print = []
-    for i in range(32,number):
-        chars_to_print.append(chr(i))
- 
-    #Junta (join) com o separador "nada" todos os caracteres e imprimir numa linha
-    print(''.join(chars_to_print)) 
+        if key == stop_char:
+            break
+
+    print('\n' + str(keys) + '\n')
+
+#Ex5a
+    # Usando como ponto de partida o exercício 4, alterar a função anterior para criar uma lista dos inputs realizados 
+    # e processar essa lista (para calcular o número de digitos/outros) a posteriori.
+    n_numeric = 0
+    n_others = 0
+    for key in keys:
+        if key.isnumeric():
+            n_numeric +=1
+        else:
+            n_others +=1
+
+    print('You pressed on ' + str(n_numeric) + ' numeric keys')
+    print('You pressed on ' + str(n_others) + ' others keys')
 
 def main():
-
-    printAllCharsUpTo()
+    countNumbersUpto('x')
 
 if __name__ == "__main__":
     main()
-
-
-###Alterar codigo
