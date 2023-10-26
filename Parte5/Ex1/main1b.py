@@ -9,6 +9,11 @@ def main():
     parser.add_argument('-if', '--image_filename', type=str, help='', required=False, 
                         default='../images/atlascar.png')
 
+    # Para colocar na linha de comandos e abrir as imagens dos atlascar 1 ou 2:
+    # ./main1b.py -if ../images/atlascar.png
+    #ou
+    # /main1b.py -if ../images/atlascar2.png
+
     args = vars(parser.parse_args()) # creates a dictionary
     print(args)
 
