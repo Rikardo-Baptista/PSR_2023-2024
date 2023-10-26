@@ -4,6 +4,12 @@
 import argparse
 import cv2
 
+#Exercício 2d:
+#Utilize a função cv2.split() para separar a imagem atlascar2.png nos seus três canais de cor (b,g,r). 
+#Cada canal deverá ser binarizado usando diferentes limites de binarização (b=50,g=100,r=150). 
+#Posteriormente, as imagens binarizadas de cada canal deverão ser concatenadas (cv2.merge) 
+#para formar uma nova imagem RGB, a mostrar numa janela.
+
 def main():
 
     parser = argparse.ArgumentParser(description='Script to compute perfect numbers.')
@@ -30,7 +36,6 @@ def main():
     cv2.imshow('image_rgb', image_rgb)  # Display the image
     cv2.imshow('image_rgb_thresholded', image_rgb_thresholded)  # Display the image
     cv2.waitKey(0) # wait for a key press before proceeding
-
 
 if __name__ == '__main__':
     main()

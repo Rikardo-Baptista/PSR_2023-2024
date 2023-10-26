@@ -4,6 +4,10 @@
 import argparse
 import cv2
 
+#Exercício 2a:
+#Carregue uma imagem do atlascar e binarize-a usando a função:
+#retval, image_thresholded = cv2.threshold(image_gray, 128, 255, cv2.THRESH_BINARY)
+
 def main():
 
     parser = argparse.ArgumentParser(description='Script to compute perfect numbers.')

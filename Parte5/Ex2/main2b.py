@@ -4,6 +4,9 @@
 import argparse
 import cv2
 
+#Exercício 2b:
+#
+
 def main():
 
     parser = argparse.ArgumentParser(description='Script to compute perfect numbers.')
@@ -35,9 +38,6 @@ def main():
     cv2.imshow('image_gray', image_gray)  # Display the image
     cv2.imshow('image_thresholded', image_thresholded)  # Display the image
     cv2.waitKey(0) # wait for a key press before proceeding
-
-#Falta codigo
-
 
 if __name__ == '__main__':
     main()

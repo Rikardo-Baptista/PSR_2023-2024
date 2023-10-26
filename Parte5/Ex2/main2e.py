@@ -6,6 +6,9 @@ import cv2
 import numpy as np
 from copy import deepcopy
 
+#Exercício 2e: 
+#Faça a segmentação do mesmo objeto (cor verde) desta vez usando o modelo de cor HSV. 
+#O resultado deve ser o mesmo que na alínea anterior.
 
 def main():
 
@@ -43,8 +46,8 @@ def main():
     image_rgb2 = cv2.merge([image_b, image_g, image_r]) 
 
 
-    #cv2.imshow('image_rgb', image_rgb)  # Display the image
-    cv2.imshow("image_mask", mask)
+    cv2.imshow('RGB_Image', image_rgb)  # Display the image
+    cv2.imshow("Mask_Image", mask)
     #cv2.imshow("image_rgb2", image_rgb2)
     cv2.waitKey(0) # wait for a key press before proceeding
 
