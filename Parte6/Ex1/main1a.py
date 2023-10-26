@@ -9,24 +9,6 @@ import cv2
 import numpy as np
 from colorama import Fore, Style
 
-
-def mouseCallback(event, x, y, flags, *userdata, image_rgb, drawing_data):
-
-    if event == cv2.EVENT_LBUTTONDOWN:
-        drawing_data['pencil_down'] = True
-        print(Fore.BLUE + 'pencil_down set to True' + Style.RESET_ALL)
-        
-    elif event == cv2.EVENT_LBUTTONUP: 
-        drawing_data['pencil_down'] = False
-        print(Fore.RED + 'pencil_down released' + Style.RESET_ALL)
-
-    if drawing_data['pencil_down'] == True:
-        # cv2.circle(image_rgb, (x, y), 3, (255,255,255), -1)
-        cv2.line(image_rgb, (drawing_data['previous_x'], drawing_data['previous_y']), (x,y), drawing_data['color'], 1) 
-
-    drawing_data['previous_x'] = x
-    drawing_data['previous_y'] = y
-
 def main():
 
     # -----------------------------------------------
