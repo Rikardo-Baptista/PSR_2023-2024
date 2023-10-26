@@ -1,69 +1,56 @@
 #!/usr/bin/env python3 
 
+#Exercicio 1b:
+#Adicione o texto 'PSR' à imagem a vermelho usando a funçao cv2.putText()
+
 import argparse
+from functools import partial
 import cv2
+import numpy as np
+from colorama import Fore, Style
 
 def main():
 
-    #--------------------------
-    # Initialization
-    #--------------------------
-
+    # -----------------------------------------------
+    # Initialization 
+    # -----------------------------------------------
     parser = argparse.ArgumentParser(description='Script to compute perfect numbers.')
     parser.add_argument('-if', '--image_filename', type=str, help='', required=False, 
                         default='../images/atlascar.png')
 
     args = vars(parser.parse_args()) # creates a dictionary
-    print(args)
 
-    image_filename = args['image_filename']
-    image_rgb = cv2.imread(image_filename, cv2.IMREAD_COLOR) # Load an image
-    image_gray = cv2.cvtColor(image_rgb, cv2.COLOR_BGR2GRAY) 
+    # -----------------------------------------------
+    # Execution 
+    # -----------------------------------------------
 
-    # Window name in which image is displayed 
-    #window_name = 'Image'
-   
-   
-
-    #--------------------------
-    # Execution
-    #--------------------------
-
-    image_filename = '../images/atlascar.png'
-    image = cv2.imread(image_filename, cv2.IMREAD_COLOR) # Load an image
-    #cv2.circle(image, center_coordinates, radius, color, thickness)
-    
+    image_rgb = cv2.imread(args['image_filename'], cv2.IMREAD_COLOR)
     h, w, nc = image_rgb.shape
 
-    xc = (w//2)
-    xd = (h//2)
+    # Draw circle on image
+    xc = int(w/2) # w//2 - divisão inteira do numero
+    yc = int(h/2) # h//2 - divisão inteira do numero
+    #Desenhar um circulo ao centro da imagem_rgb com raio 55 e cor azul(255,0,0) com enchimento total.
+    cv2.circle(image_rgb, (xc, yc), 55, (255,0,0), -1)
+    
+    # Add text to image
+    font = cv2.FONT_HERSHEY_SIMPLEX 
+    org = (50, 100) 
+    fontScale = 3
+    color = (0, 0, 255) 
+    thickness = 2
+    image_rgb = cv2.putText(image_rgb, 'PSR', org, font, fontScale, color, thickness, cv2.LINE_AA) 
 
-     # Center coordinates 
-    center_coordinates = (xc, xd) 
-    # Radius of circle 
-    radius = 20
-    # Blue color in BGR 
-    color = (255, 0, 0) 
-    # Line thickness of 2 px 
-    thickness = 2 # se for valor -1 preenche a azul o circulo
-
-
-    cv2.circle(image_rgb, center_coordinates, radius, color, thickness)
-
-    #--------------------------
-    # Visualization
-    #--------------------------
-
-    #cv2.imshow('window', image)  # Display the image
-    cv2.imshow('window', image_rgb)  # Display the image
+    # -----------------------------------------------
+    # Visualization 
+    # -----------------------------------------------
+    cv2.imshow('image_rgb', image_rgb)  # Display the image
     cv2.waitKey(0) # wait for a key press before proceeding
 
-    #--------------------------
-    # Termination
-    #--------------------------
+    # -----------------------------------------------
+    # Termination 
+    # -----------------------------------------------
+    cv2.destroyWindow('image_rgb')
 
 if __name__ == '__main__':
     main()
-
-
-    # Falta codigo !!!!
