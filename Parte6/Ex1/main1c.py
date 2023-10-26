@@ -38,17 +38,9 @@ def main():
     # -----------------------------------------------
     # Initialization 
     # -----------------------------------------------
-    parser = argparse.ArgumentParser(description='Script to compute perfect numbers.')
-    parser.add_argument('-if', '--image_filename', type=str, help='', required=False, 
-                        default='../images/atlascar.png')
 
-    args = vars(parser.parse_args()) # creates a dictionary
-
-    # image_rgb = cv2.imread(image_filename, cv2.IMREAD_COLOR) # Load an image
+    #Criar uma imagem toda branca com 400x600
     image_rgb = np.ones((400,600,3), dtype=np.uint8) * 255
-    # image_rgb = np.zeros((400,600), dtype=np.uint8) + 255
-
-    h, w, nc = image_rgb.shape
 
     #Criação do dicionário drawing_data com as chaves pencil_down, previous_x, previous_y, color
     drawing_data = {'pencil_down': False, 'previous_x': 0, 'previous_y': 0, 'color': (0,0,0)}

@@ -1,23 +1,35 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
+
+#Exercicio 2b:
+#Adapte o exercício anterior de modo a implementar um programa que faça a aquisição 
+#e display contínuos da imagem da câmara do seu portátil.
+
 import cv2
 
 def main():
-    # initial setup
+    #--------------------------
+    # Initialization
+    #--------------------------
     capture = cv2.VideoCapture(0)
-    window_name = 'A5-Ex2'
+    window_name = 'window'
     cv2.namedWindow(window_name,cv2.WINDOW_AUTOSIZE)
 
-    _, image = capture.read()  # get an image from the camera
+    #--------------------------
+    # Execution
+    #--------------------------
+    while True:
+        _, image = capture.read()  # get an image from the camera
 
-    # add code to show acquired image
+        #--------------------------
+        # Visualization
+        #--------------------------
+        cv2.imshow('window', image)  # Display the image
+        cv2.waitKey(25)
+
+    #--------------------------
+    # Termination
+    #-------------------------- 
     
-
-
-    
-    # add code to wait for a key press
-    cv2.waitKey(0) # wait for a key press before proceeding
-
-
 
 if __name__ == '__main__':
     main()
