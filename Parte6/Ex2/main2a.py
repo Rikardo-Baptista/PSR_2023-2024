@@ -21,7 +21,7 @@ def main():
     #--------------------------
     # Visualization
     #--------------------------
-    cv2.imshow('window', image)  # Display the image
+    cv2.imshow('window', capture)  # Display the image
     cv2.waitKey(25)
 
     #--------------------------
