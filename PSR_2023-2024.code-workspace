@@ -3,6 +3,9 @@
 		{
 			"name": "PSR_2023-2024",
 			"path": "."
+		},
+		{
+			"path": "../../../catkin_ws"
 		}
 	],
 	"settings": {}
