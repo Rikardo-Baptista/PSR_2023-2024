@@ -5,7 +5,7 @@
 			"path": "."
 		},
 		{
-			"path": "../../../catkin_ws"
+			"path": "../../../catkin_ws/src/PSR_2023_2024"
 		}
 	],
 	"settings": {}
