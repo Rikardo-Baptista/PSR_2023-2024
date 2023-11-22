@@ -6,6 +6,9 @@
 		},
 		{
 			"path": "../../../catkin_ws/src/PSR_2023_2024"
+		},
+		{
+			"path": "../../../catkin_ws/src/PSR_2023_2024/Parte8"
 		}
 	],
 	"settings": {}
