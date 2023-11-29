@@ -5,9 +5,8 @@
 			"path": "."
 		},
 		{
-			"path": "../../../catkin_ws/src/PSR_2023_2024"
-		},
-
+			"path": "../../../UA/1ºAno_1ºSemestre_2023-2024/psr_23-24"
+		}
 	],
 	"settings": {}
 }

@@ -1,19 +1,34 @@
 #!/usr/bin/env python3
-import argparse
-from functools import partial
 
-from colorama import Fore, Style
+import math
 import rospy
-from std_msgs.msg import String
+import std_msgs.msg
+from sensor_msgs.msg import LaserScan, PointCloud2, PointField
+from sensor_msgs import point_cloud2
 
+publisher = rospy.Publisher('/left_laser/point_cloud', PointCloud2)
 
-def callback(message_received):
+def callbackMessageReceived(msg):
+    rospy.loginfo('Received laser scan message')
 
-    # read highlight_text_color parameter to know which color to use in prints
-    print_color = rospy.get_param('/highlight_text_color', 'MAGENTA')
+    header = std_msgs.msg.Header(seq=msg.header.seq, stamp=msg.header.stamp, frame_id=msg.header.frame_id)
+    fields = [PointField('x', 0, PointField.FLOAT32, 1),
+              PointField('y', 4, PointField.FLOAT32, 1),
+              PointField('z', 8, PointField.FLOAT32, 1)]
+    
+    points = []
+    z = 0 # a mensagem que estamos a visualizar so contem informação
+          # em x e y porque o scan é 2D, logo z = 0.
 
-    rospy.loginfo(getattr(Fore, print_color) + message_received.data + Style.RESET_ALL)
+    for idx, range in enumerate(msg.ranges):
+        theta = msg.angle_min + msg.angle_increment * idx
+        x = range * math.cos(theta)
+        y = range * math.sin(theta)
+        points.append([x, y, z])
 
+    pc2=point_cloud2.create_cloud(header, fields, points) #create point_cloud2 data structure
+    publisher.publish(pc2) # publish (will automatically convert from point_cloud2 to Pointcloud2 message)
+    rospy.loginfo('Published Pointcloud2 msg')
 
 def main():
 
@@ -22,10 +37,9 @@ def main():
     # -------------------------------------------
 
     # Setup ROS
-    rospy.init_node('subscriber', anonymous=True)
-
-    rospy.Subscriber('topic_name', String, callback)
-
+    rospy.init_node('lidar_subscriber', anonymous=False)
+    rospy.Subscriber('/left_laser/laserscan', LaserScan, callbackMessageReceived)
+    
     # -------------------------------------------
     # Execution
     # -------------------------------------------
