@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <node pkg="rviz" type="rviz" name="rviz" output='screen'
+    args='-d $(find psr_aula11_ex6_scara)/config/rviz.rviz'>
+    </node>
+
+<!--    
+    -->
+    
+
+
+        
+</launch>

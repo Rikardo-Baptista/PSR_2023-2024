@@ -1,0 +1,10 @@
+<launch>
+
+    <node pkg="psr_aula11_ex2" type="circular_frame.py" name="circular_frame" output='screen'> 
+    </node>
+
+    <node pkg="rviz" type="rviz" name="rviz" output='screen' 
+    args='-d $(find psr_aula11_ex2)/config/config.rviz'>
+    </node>
+        
+</launch>
