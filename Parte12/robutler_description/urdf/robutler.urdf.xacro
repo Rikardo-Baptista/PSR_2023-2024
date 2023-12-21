@@ -18,7 +18,7 @@
       <geometry>
         <mesh filename="package://turtlebot3_description/meshes/bases/waffle_pi_base.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="orange"/>
+      <material name="light_black"/>
     </visual>
 
     <collision>
@@ -50,7 +50,7 @@
       <geometry>
         <mesh filename="package://turtlebot3_description/meshes/wheels/left_tire.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="white"/>
+      <material name="red"/>
     </visual>
 
     <collision>
@@ -82,7 +82,7 @@
       <geometry>
         <mesh filename="package://turtlebot3_description/meshes/wheels/right_tire.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="white"/>
+      <material name="red"/>
     </visual>
 
     <collision>
@@ -167,7 +167,8 @@
       <geometry>
         <mesh filename="package://turtlebot3_description/meshes/sensors/lds.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="dark"/>
+      <!-- <material name="dark"/> -->
+      <material name="white"/>
     </visual>
 
     <collision>
@@ -260,7 +261,8 @@
 
   <link name="base_antena">
     <visual>
-      <origin xyz="0 0 0.0725" rpy="0 0 0"/>
+      <!-- <origin xyz="0 0 0.0725" rpy="0 0 0"/> -->
+      <origin xyz="0 0 0.047" rpy="0 0 0"/>
       <geometry>
         <cylinder length="0.10" radius="0.003"/>
       </geometry>
@@ -271,7 +273,7 @@
   <joint name="antena_joint" type="fixed">
     <parent link="base_antena"/>
     <child link="antena"/>
-    <origin xyz="0 0 0.125" rpy="0 0 0"/>
+    <origin xyz="0 0 0.105" rpy="0 0 0"/>
   </joint>
 
   <link name="antena">
@@ -280,7 +282,7 @@
       <geometry>
         <cylinder length="0.02" radius="0.030"/>
       </geometry>
-      <material name="blue"/>
+      <material name="red"/>
     </visual>
   </link>
 
