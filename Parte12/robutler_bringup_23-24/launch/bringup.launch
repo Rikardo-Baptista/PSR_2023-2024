@@ -14,4 +14,5 @@
     <node pkg="rviz" type="rviz" name="rviz" output="screen" args="-d $(find robutler_bringup_23-24)/config/rviz.rviz"/>
 
     <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -model robutler -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
+
 </launch>
